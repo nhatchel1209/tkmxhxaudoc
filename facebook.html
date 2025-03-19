@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách tài khoản MXH xấu độc</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .list-group-item {
+            display: flex;
+            align-items: center;
+        }
+        .list-group-item img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Danh sách tài khoản MXH xấu độc</h2>
+        <ul class="list-group" id="bookmarkList"></ul>
+    </div>
+    <script>
+        const bookmarks = [
+            { name: "Nguyễn Xuân Diện", url: "https://www.facebook.com/nxdien2k15", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Lê Xuân Hiền", url: "https://www.facebook.com/xuanhien.le.31", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Toản Kiều Duy", url: "https://www.facebook.com/toan.kieuduy", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Nguyễn Hữu Châu Phan", url: "https://www.facebook.com/chauphan.nguyenhuu", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Nguyễn Sĩ Thụy", url: "https://www.facebook.com/sithuy.nguyen", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Thanh Tâm Lê", url: "https://www.facebook.com/thanhtam.le.58152559", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Hoàng Trọng Phiến", url: "https://www.facebook.com/profile.php?id=100057084912045", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Lê Bình (Lê Thanh Bình", url: "https://www.facebook.com/le.thanhbinh.988", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Phan Đình Thành", url: "https://www.facebook.com/dinhthanhlangco", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Thập Tự Chinh(Cully)", url: "https://www.facebook.com/thaptuchinh.11718", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Tăng Đoàn Giáo Hội Phật Giáo Việt Nam Thống Nhất", url: "https://www.facebook.com/chuaphuocthanhhue", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Nguyễn Ngọc Nam Phong", url: "https://www.facebook.com/gioan.namphong", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Nhi Be Hoang", url: "https://www.facebook.com/nhibehoanglangco", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Dương Hòa Đức", url: "https://www.facebook.com/quancongdhd", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Thích Không Tánh", url: "https://www.facebook.com/thich.khongtanh.1", icon: "https://www.facebook.com/favicon.ico" },
+            { name: "Hóng Biến Thành Phố Huế", url: "https://www.facebook.com/Nguoiduatinhue", icon: "https://www.facebook.com/favicon.ico" }
+        ];
+
+        const listContainer = document.getElementById("bookmarkList");
+        bookmarks.forEach(bookmark => {
+            const listItem = document.createElement("li");
+            listItem.className = "list-group-item";
+            const link = document.createElement("a");
+            link.href = bookmark.url;
+            link.textContent = bookmark.name;
+            link.target = "_blank";
+            link.className = "text-decoration-none text-primary";
+            
+            const icon = document.createElement("img");
+            icon.src = bookmark.icon;
+            icon.alt = "icon";
+            
+            listItem.appendChild(icon);
+            listItem.appendChild(link);
+            listContainer.appendChild(listItem);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
